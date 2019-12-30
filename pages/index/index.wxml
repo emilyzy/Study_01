@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<!--
+框架最大的特点就是让开发者必须按照特定的方式编写代码
+1.数据源于当前页面对象js文件data属性
+2.希望绑定在哪儿就在那里用mustache
+-->
+<view class="container">
+<!--这种{{}}的语法叫做mustache
+可以用在：
+1.元素内部
+2.元素的属性上
+3.简单逻辑
+不能用在标签名和属性名上，只能用在值的位置
+-->
+  <text>{{message}}</text>
+  <text>{{person.age}}</text>
+  <view class="world {{viewClassName}}"></view>
+  <text>{{'abc'}}</text>
+  <text>{{111+999}}</text>
+  <text>{{100>50?1:2}}</text>
+  <!--当语法解析误解了true和false，可以用{{}}解决-->
+  <checkbox checked="{{true}}"></checkbox>
+  <checkbox checked="{{false}}"></checkbox>
+  <!--列表数据绑定-->
+  <view>
+  <!--
+  明确页面结构中的循环体
+  删除多余的重复内容
+  在循环体上加上wx：属性
+  属性值=js文件data属性中的数据源（数组，对象）
+  在循环体内部使用item代表当前被遍历的元素
+
+  -->
+    <view wx:for="{{todos}}">
+      <text>{{index+1}}</text>
+      <!--同样，index(下标)起别名使用wx:for-index="aaa"-->
+      <checkbox checked="{{item.completed}}"></checkbox>
+      <text>{{item.name}}</text>
+      <!--如果全局属性中有item这种关键词，则在循环体标签上添加wx:for-item="aaa"起别名,把下面的item替换为aaa-->
+    </view>
+  </view>
+</view>

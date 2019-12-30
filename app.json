@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "STUDY",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar":{
+    "color":"#444",
+    "selectedColor":"#1f6bee",
+    "backgroundColor":"#f6f6f6",
+    "borderStyle": "white",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text": "HOME",
+        "iconPath": "assets/todos.png",
+        "selectedIconPath": "assets/todos-active.png"
+      },
+      {
+        "pagePath":"pages/logs/logs",
+        "text": "LOGS",
+        "iconPath": "assets/logs.png",
+        "selectedIconPath": "assets/logs-active.png"
+      }
+    ]
+  }
+}
